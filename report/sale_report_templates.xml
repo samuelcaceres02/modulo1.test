@@ -1,0 +1,14 @@
+<odoo>
+  <template id="report_saleorder_document_inherit" inherit_id="sale.report_saleorder_document">
+    <xpath expr="//div[@class='page']" position="inside">
+      <div class="row mt16">
+        <div class="col-12">
+          <t t-if="doc.partner_id.sales_limit">
+            <strong>Porcentaje de límite alcanzado:</strong>
+            <span t-esc="round(doc.partner_id.credit_used / doc.partner_id.sales_limit * 100, 2)"/>%
+          </t>
+        </div>
+      </div>
+    </xpath>
+  </template>
+</odoo>

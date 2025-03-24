@@ -1,0 +1,13 @@
+<odoo>
+  <record id="view_sale_order_form_inherit_sales_limit" model="ir.ui.view">
+    <field name="name">sale.order.form.inherit.sales_limit</field>
+    <field name="model">sale.order</field>
+    <field name="inherit_id" ref="sale.view_order_form"/>
+    <field name="arch" type="xml">
+      <!-- Se inserta el campo relacionado partner_sales_limit en modo lectura -->
+      <xpath expr="//field[@name='partner_id']" position="after">
+        <field name="partner_sales_limit" readonly="1"/>
+      </xpath>
+    </field>
+  </record>
+</odoo>
